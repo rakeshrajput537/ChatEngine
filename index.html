@@ -39,7 +39,7 @@
 	<div id="messageArea" class="row">
 		<div class="col-sm-4">
 			<div class="well">
-				<h3>Online Users</h3>
+				<h3 id="liveuser">Online Users</h3>
 				<ul class="list-group" id="users"></ul>
 				
 			</div>
@@ -63,6 +63,14 @@
 	</div>
 </div>
 <script>
+	var name;
+	name =prompt("Please enter your name");
+	var liveuser=document.getElementById('liveuser');
+	var hr = document.createElement("hr");
+	liveuser.appendChild(hr);
+	liveuser.innerHTML+="welcome "+name;
+
+
 	$(function () {
 		var socket = io.connect();
 		var $messageForm = $('#messageForm');
